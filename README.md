@@ -1,1 +1,1 @@
-# voxelblock-io.github.io
+# voxelblock.io
