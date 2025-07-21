@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>voxelblock.io <coming soon>.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: #181c20;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #23272b;
+            padding: 2rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        .soon {
+            color: #ffb347;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+        .visits {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #7ecfff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>voxelblock.io</h1>
+        <div class="soon">Coming Soon! 🚧<br>We're working hard to bring you something awesome.</div>
+        <div class="visits">
+            Page visits: <span id="visit-count">...</span>
+        </div>
+    </div>
+    <script>
+        // Simple visit counter using localStorage as a fallback
+        // For a real site-wide counter, use a backend or a third-party API
+        (function() {
+            const counterKey = 'voxel-visit-count';
+            let count = localStorage.getItem(counterKey);
+            if (!count) {
+                count = 1;
+            } else {
+                count = parseInt(count, 10) + 1;
+            }
+            localStorage.setItem(counterKey, count);
+            document.getElementById('visit-count').textContent = count;
+        })();
+    </script>
+</body>
+</html>
